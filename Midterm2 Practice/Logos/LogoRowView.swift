@@ -7,24 +7,29 @@
 
 import SwiftUI
 
-struct LogosView: View {
-    @Binding var logos: Logos
+struct LogoRowView: View {
+    @Binding var logo: Logo
     
     var body: some View {
         HStack {
-            Image(systemName: logos.name)
+            Image(systemName: logo.name)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 50, height: 50)
-                .padding()
+                .padding(.horizontal, 1)
+                .foregroundColor(logo.color)
+            Spacer()
+            Text(logo.userTitle)
+                .foregroundColor(.blue)
+            Spacer()
         }
     }
 }
 
 #Preview {
-    let logosName: [String] = ["xbox.logo", "playstation.logo", "apple.logo"]
+    let logosName: [String] = ["xbox.logo"]
     ForEach(logosName, id: \.self) { logo in
         // .constant is used to pass a constant value to a binding for a preview
-        LogosView(logos: .constant(Logos(name: logo)))
+        LogoRowView(logo: .constant(Logo(name: logo, color: .red)))
     }
 }

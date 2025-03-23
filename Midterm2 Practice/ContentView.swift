@@ -8,19 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var logos: [Logos] = [
-        Logos(name: "xbox.logo"),
-        Logos(name: "playstation.logo"),
-        Logos(name: "apple.logo"),
-    ]
+    /// The array that keeps track of user-added logos.
+    @State private var logos: [Logo] = []
     
-//    @State var logos: [Logos] = [Logos()]
+    /// The edit mode for the list of logos.
+    @State private var editMode: EditMode = .inactive
     
     var body: some View {
         NavigationStack {
-            Text("Midterm 2 Practice")
-                .font(.title)
-                .padding()
             HStack {
                 NavigationLink(destination: BooleanView()) {
                     Text("Booleans")
@@ -35,15 +30,37 @@ struct ContentView: View {
                         .padding()
                 }
             }
-            List {
-                ForEach($logos) { $logo in
-                    NavigationLink(destination: LogosRowView(logos: $logo)) {
-                        LogosView(logos: $logo)
+            
+            FullLogoView(logos: $logos)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    EditButton()
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: addLogo) {
+                        Image(systemName: "plus")
                     }
                 }
             }
+            .environment(\.editMode, $editMode)
         }
+        .preferredColorScheme(.dark)
     }
+    
+    
+    /// Adds a random logo to the list of logos
+    private func addLogo() {
+        let options = ["xbox.logo", "playstation.logo", "apple.logo"]
+        let randomLogo = options.randomElement()!
+        let randomColor = Color(
+            red: Double.random(in: 0...1),
+            green: Double.random(in: 0...1),
+            blue: Double.random(in: 0...1)
+        )
+        let newLogo = Logo(name: randomLogo, color: randomColor)
+        logos.append(newLogo)
+    }
+    
 }
 
 #Preview {

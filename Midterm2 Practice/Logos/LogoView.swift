@@ -7,23 +7,35 @@
 
 import SwiftUI
 
-struct LogosRowView: View {
-    @Binding var logos: Logos
+struct LogoView: View {
+    @Binding var logo: Logo
     
     var body: some View {
         VStack {
-            Image(systemName: logos.name)
+            Image(systemName: logo.name)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 200, height: 200)
-                .padding()
+                .padding(.bottom)
+                .foregroundColor(logo.color)
             
-            TextField("Name", text: $logos.name)
+            TextField("Name", text: $logo.userTitle)
                 .multilineTextAlignment(.center)
+                .padding(.bottom)
             
-            Text("Date Added: \(logos.date, formatter: dateFormatter)")
+            Text("Date Added: \(logo.date, formatter: dateFormatter)")
                 .font(.caption)
                 .foregroundColor(.secondary)
+                .padding(.bottom)
+            
+            Button("Non-Working") {
+                print("Non-Working")
+            }
+            
+            HStack {
+                DatePicker(selection: $logo.date, displayedComponents: .date, label: {})
+                    .padding(.horizontal, 200)
+            }
         }
     }
     
@@ -37,6 +49,6 @@ struct LogosRowView: View {
 #Preview {
     let logosName: [String] = ["xbox.logo"]
     ForEach(logosName, id: \.self) { logo in
-        LogosRowView(logos: .constant(Logos(name: logo)))
+        LogoRowView(logo: .constant(Logo(name: logo, color: .red)))
     }
 }

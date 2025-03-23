@@ -14,7 +14,7 @@ struct OddEvenView: View {
         VStack { // isEven
             TextField("Enter Text Here", text: $userInput)
                 .padding(.top)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .textFieldStyle(.roundedBorder)
                 .font(.headline)
                 .foregroundColor(.blue)
                 .multilineTextAlignment(.center)
@@ -23,6 +23,7 @@ struct OddEvenView: View {
             Text("Is it Even?: \(isEven(from: userInput) ? "Yes" : "No")")
                 .padding(.bottom)
         }
+        .textFieldStyle(.roundedBorder)
         .padding()
         .overlay(
             RoundedRectangle(cornerRadius: 8)
