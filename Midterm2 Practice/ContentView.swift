@@ -31,7 +31,7 @@ struct ContentView: View {
                 }
             }
             
-            FullLogoView(logos: $logos)
+            LogoDetailView(logos: $logos)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()

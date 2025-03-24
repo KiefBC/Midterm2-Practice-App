@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FullLogoView: View {
+struct LogoDetailView: View {
     @Binding var logos: [Logo]
     
     var body: some View {
@@ -34,5 +34,5 @@ struct FullLogoView: View {
 }
 
 #Preview {
-    FullLogoView(logos: .constant([Logo(name: "xbox.logo", color: Color.red), Logo(name: "playstation.logo", color: Color.blue), Logo(name: "apple.logo", color: Color.green)]))
+    LogoDetailView(logos: .constant([Logo(name: "xbox.logo", color: Color.red), Logo(name: "playstation.logo", color: Color.blue), Logo(name: "apple.logo", color: Color.green)]))
 }
