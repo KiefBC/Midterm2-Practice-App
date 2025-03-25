@@ -10,9 +10,7 @@ import SwiftUI
 struct ContentView: View {
     /// The array that keeps track of user-added logos.
     @State private var logos: [Logo] = []
-    /// The edit mode for the list of logos.
-//    @State private var editMode: EditMode = .inactive
-    
+
     var body: some View {
         NavigationStack {
             HStack {
@@ -33,7 +31,7 @@ struct ContentView: View {
                         .padding()
                 }
             }
-            
+
             LogoDetailView(logos: $logos)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -45,25 +43,24 @@ struct ContentView: View {
                     }
                 }
             }
-//            .environment(\.editMode, $editMode)
         }
         .preferredColorScheme(.dark)
     }
-    
-    
-    /// Adds a random logo to the list of logos
+
+
+    /// Adds a random logo to the list of logos with a random color applied
     private func addLogo() {
-        let options = ["xbox.logo", "playstation.logo", "apple.logo"]
-        let randomLogo = options.randomElement()!
-        let randomColor = Color(
+        let options: [String] = ["xbox.logo", "playstation.logo", "apple.logo", "gamecontroller.fill", "formfitting.gamecontroller.fill"]
+        let randomLogo: String = options.randomElement()!
+        let randomColor: Color = Color(
             red: Double.random(in: 0...1),
             green: Double.random(in: 0...1),
             blue: Double.random(in: 0...1)
         )
-        let newLogo = Logo(name: randomLogo, color: randomColor)
+        let newLogo: Logo = Logo(name: randomLogo, color: randomColor)
         logos.append(newLogo)
     }
-    
+
 }
 
 #Preview {

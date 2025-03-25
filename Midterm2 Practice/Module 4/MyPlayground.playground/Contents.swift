@@ -1,5 +1,3 @@
-import UIKit
-
 func checkSquare(total: Int, square: [[Int]]) -> [String: Int] {
     let n = square.count
     var errors = [String: Int]()

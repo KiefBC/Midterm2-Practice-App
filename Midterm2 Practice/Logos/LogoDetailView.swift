@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LogoDetailView: View {
     @Binding var logos: [Logo]
-    
+
     var body: some View {
         List {
             ForEach($logos) { $logo in
@@ -21,12 +21,12 @@ struct LogoDetailView: View {
             .onMove(perform: moveLadybugs)
         }
     }
-    
+
     /// Deletes the ladybugs at the specified offsets
     private func deleteLadybugs(at offsets: IndexSet) {
         logos.remove(atOffsets: offsets)
     }
-    
+
     ///  Moves the ladybugs from the source to the destination
     private func moveLadybugs(from source: IndexSet, to destination: Int) {
         logos.move(fromOffsets: source, toOffset: destination)

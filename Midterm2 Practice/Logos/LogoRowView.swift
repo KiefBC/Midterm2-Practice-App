@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LogoRowView: View {
     @Binding var logo: Logo
-    
+
     var body: some View {
         HStack {
             Image(systemName: logo.name)

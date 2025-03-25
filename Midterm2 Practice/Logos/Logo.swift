@@ -15,12 +15,12 @@ class Logo: Identifiable {
     var date: Date
     var userTitle: String
     var color: Color
-    
-    init(name: String, color: Color, id: UUID = UUID(), date: Date = Date(), userTitle: String = "Name Me") {
+
+    init(name: String, color: Color, id: UUID = UUID(), date: Date = Date(), userTitle: String? = nil) {
         self.id = id
         self.name = name
         self.date = date
-        self.userTitle = userTitle
+        self.userTitle = userTitle ?? name
         self.color = color
     }
 }

@@ -10,6 +10,9 @@ import SwiftUI
 struct LogoView: View {
     @Binding var logo: Logo
     
+    /// Tracks whether we show the ColorPicker or not
+    @State var colorChangeShow: Bool = false
+
     var body: some View {
         VStack {
             Image(systemName: logo.name)
@@ -18,27 +21,37 @@ struct LogoView: View {
                 .frame(width: 200, height: 200)
                 .padding(.bottom)
                 .foregroundColor(logo.color)
-            
+
             TextField("Name", text: $logo.userTitle)
                 .multilineTextAlignment(.center)
                 .padding(.bottom)
-            
+
             Text("Date Added: \(logo.date, formatter: dateFormatter)")
                 .font(.caption)
                 .foregroundColor(.secondary)
                 .padding(.bottom)
-            
-            Button("Non-Working") {
-                print("Non-Working")
+
+            Button(colorChangeShow ? "Hide Color" : "Change Color?") {
+                colorChangeShow.toggle()
             }
+            .padding(.bottom)
             
-            HStack {
-                DatePicker(selection: $logo.date, displayedComponents: .date, label: {})
-                    .padding(.horizontal, 200)
+            DatePicker(selection: $logo.date, displayedComponents: .date, label: {})
+                .padding(.horizontal, 200)
+
+            if colorChangeShow {
+                Group {
+                    ColorPicker("", selection: $logo.color, supportsOpacity: true)
+                        .labelsHidden()
+                        .padding(.bottom)
+                    Text("Color: \(logo.color.description)")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
             }
         }
     }
-    
+
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
