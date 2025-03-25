@@ -25,24 +25,41 @@ struct DigitCounterView: View {
     
     var body: some View {
         VStack {
-            TextField("Enter Text...", text: Binding(
-                get: {
-                    userText
-                },
-                set: {
-                    userText = $0
-                    let count = userText.reduce(0, { $1.isNumber ? $0 + 1 : $0 })
-                    let oddNumAmount = userText.reduce(0) { count, char in
+            // Using Binding to update the count of digits and odd numbers
+//            TextField("Enter Text...", text: Binding(
+//                get: {
+//                    userText
+//                },
+//                set: {
+//                    userText = $0
+//                    let count = userText.reduce(0, { $1.isNumber ? $0 + 1 : $0 })
+//                    let oddNumAmount = userText.reduce(0) { count, char in
+//                        if char.isNumber, let digit = Int(String(char)), digit % 2 == 1 {
+//                            return count + 1
+//                        }
+//                        return count
+//                    }
+//                    digitLabel = String(count) + " digits"
+//                    oddNums = String(oddNumAmount) + " odd numbers"
+//                }
+//            ))
+//                .multilineTextAlignment(.center)
+            
+            // Using .onChange to update the count of digits and odd numbers
+            TextField("Enter Text...", text: $userText)
+                .onChange(of: userText) { _, newValue in
+                    let count = newValue.reduce(0) { $1.isNumber ? $0 + 1 : $0 }
+                    let oddNumAmount = newValue.reduce(0) { (count, char) in
                         if char.isNumber, let digit = Int(String(char)), digit % 2 == 1 {
                             return count + 1
                         }
                         return count
                     }
-                    digitLabel = String(count) + " digits"
-                    oddNums = String(oddNumAmount) + " odd numbers"
+                    digitLabel = "\(count) digits"
+                    oddNums = "\(oddNumAmount) odd numbers"
                 }
-            ))
                 .multilineTextAlignment(.center)
+            
             Text(digitLabel)
             Text(oddNums)
                 

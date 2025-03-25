@@ -47,8 +47,5 @@ struct LogoView: View {
 }
 
 #Preview {
-    let logosName: [String] = ["xbox.logo"]
-    ForEach(logosName, id: \.self) { logo in
-        LogoRowView(logo: .constant(Logo(name: logo, color: .red)))
-    }
+    LogoView(logo: .constant(Logo(name: "xbox.logo", color: .red)))
 }

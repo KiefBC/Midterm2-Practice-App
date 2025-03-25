@@ -10,9 +10,8 @@ import SwiftUI
 struct ContentView: View {
     /// The array that keeps track of user-added logos.
     @State private var logos: [Logo] = []
-    
     /// The edit mode for the list of logos.
-    @State private var editMode: EditMode = .inactive
+//    @State private var editMode: EditMode = .inactive
     
     var body: some View {
         NavigationStack {
@@ -29,6 +28,10 @@ struct ContentView: View {
                     Text("Module 2")
                         .padding()
                 }
+                NavigationLink(destination: Module4View()) {
+                    Text("Module 4")
+                        .padding()
+                }
             }
             
             LogoDetailView(logos: $logos)
@@ -42,7 +45,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .environment(\.editMode, $editMode)
+//            .environment(\.editMode, $editMode)
         }
         .preferredColorScheme(.dark)
     }

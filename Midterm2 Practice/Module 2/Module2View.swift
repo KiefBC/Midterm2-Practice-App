@@ -9,10 +9,18 @@ import SwiftUI
 
 struct Module2View: View {
     var body: some View {
-        CalculatorView()
-        StringCombinerView()
-        ChangeCaseView()
-        DigitCounterView()
+        ScrollView {
+            VStack {
+                CalculatorView()
+                StringCombinerView()
+                ChangeCaseView()
+                DigitCounterView()
+                CopyMyStringView()
+                IsDoublingView()
+                PunctuationCounterView()
+                CountCapitalsView()
+            }
+        }
     }
 }
 
