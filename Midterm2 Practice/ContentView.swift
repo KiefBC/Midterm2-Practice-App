@@ -31,6 +31,12 @@ struct ContentView: View {
                         .padding()
                 }
             }
+            HStack {
+                NavigationLink(destination: Module5View()) {
+                    Text("Module 5")
+                        .padding()
+                }
+            }
 
             LogoDetailView(logos: $logos)
             .toolbar {

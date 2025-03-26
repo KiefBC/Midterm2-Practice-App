@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct Midterm2_PracticeApp: App {
@@ -13,5 +14,6 @@ struct Midterm2_PracticeApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: Addressbook.self)
     }
 }
