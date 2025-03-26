@@ -23,6 +23,10 @@ struct Module4View: View {
                         Text("Weather Picker")
                             .padding()
                     }
+                    NavigationLink(destination: WeatherSliderView()) {
+                        Text("Weather Slider")
+                            .padding()
+                    }
                 }
             Spacer()
             Text("The Methodology is:")
