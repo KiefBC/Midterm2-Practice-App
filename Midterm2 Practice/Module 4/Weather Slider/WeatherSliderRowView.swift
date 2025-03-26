@@ -11,8 +11,8 @@ struct WeatherSliderRowView: View {
     @Binding var weathers: [Weather]
     
     var body: some View {
-        ForEach($weathers) { $weather in
-            VStack {
+        List {
+            ForEach($weathers) { $weather in
                 WeatherSliderItemView(weather: $weather)
             }
         }

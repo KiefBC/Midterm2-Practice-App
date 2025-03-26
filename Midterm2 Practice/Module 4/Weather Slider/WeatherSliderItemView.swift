@@ -19,6 +19,5 @@ struct WeatherSliderItemView: View {
                 .frame(width: 50, height: 50)
             Slider(value: $sliderValue, in: 0...Double(weatherIcons.count - 1))
         }
-        .padding()
     }
 }
