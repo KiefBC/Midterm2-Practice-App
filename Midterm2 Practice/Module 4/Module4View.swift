@@ -19,7 +19,18 @@ struct Module4View: View {
                         Text("Favorite Color")
                             .padding()
                     }
+                    NavigationLink(destination: WeatherConditionView()) {
+                        Text("Weather Picker")
+                            .padding()
+                    }
                 }
+            Spacer()
+            Text("The Methodology is:")
+            Text("1) Create Class")
+            Text("2) Create Main View")
+            Text("3) Create Row View")
+            Text("4) Create Item Row View")
+            Text("5) Create Detail (Info) View")
             Spacer()
         }
     }
