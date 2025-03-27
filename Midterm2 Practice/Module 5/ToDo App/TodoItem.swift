@@ -17,6 +17,7 @@ struct TodoItem: View {
                 .labelsHidden()
             Spacer()
             Text("Job Completed? \(todo.isFinished ? "✅" : "❌")")
+            StarRatingView(todo: todo)
         }
         .toggleStyle(.switch)
     }
