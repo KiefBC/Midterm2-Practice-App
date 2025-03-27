@@ -9,7 +9,26 @@ import SwiftUI
 
 struct Module5View: View {
     var body: some View {
-        AddressContentView()
+        NavigationStack {
+            HStack {
+                NavigationLink(destination: AddressContentView()) {
+                    Text("Address Book")
+                        .padding()
+                }
+                NavigationLink(destination: JournalContentView()) {
+                    Text("Journal Book")
+                        .padding()
+                }
+                NavigationLink(destination: ToDoView()) {
+                    Text("To Do List")
+                        .padding()
+                }
+                NavigationLink(destination: NotepadView()) {
+                    Text("Notepad")
+                        .padding()
+                }
+            }
+        }
     }
 }
 

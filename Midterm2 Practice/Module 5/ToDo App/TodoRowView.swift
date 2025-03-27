@@ -1,0 +1,32 @@
+//
+//  TodoRowView.swift
+//  Midterm2 Practice
+//
+//  Created by Kiefer Hay on 2025-03-26.
+//
+
+import SwiftUI
+
+struct TodoRowView: View {
+    @Environment(\.modelContext) var modelContext
+    var todos: [Todo]
+    
+    var body: some View {
+        List {
+            ForEach(todos) { todo in
+                NavigationLink(destination: TodoDetailView(todo: todo)) {
+                    TodoItem(todo: todo)
+                }
+            }
+            .onDelete {
+                if let index = $0.first {
+                    modelContext.delete(todos[index])
+                }
+            }
+        }
+    }
+}
+
+#Preview {
+    TodoRowView(todos: [Todo(name: "Milk", isFinished: false)])
+}
