@@ -14,12 +14,11 @@ class Todo: Identifiable {
     var name: String
     var isFinished: Bool
     var order: Int = 0
-    var rating: Int
+    var rating: Int = 0
     
-    init(id: UUID = UUID(), name: String, isFinished: Bool = false, rating: Int = 0) {
+    init(id: UUID = UUID(), name: String, isFinished: Bool = false) {
         self.id = id
         self.name = name
         self.isFinished = isFinished
-        self.rating = rating
     }
 }

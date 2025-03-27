@@ -20,6 +20,7 @@ struct TodoRowView: View {
             }
             .onDelete {
                 if let index = $0.first {
+                    print("Deleting \(todos[index].name)")
                     modelContext.delete(todos[index])
                 }
             }
