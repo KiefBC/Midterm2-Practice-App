@@ -23,6 +23,14 @@ struct TodoRowView: View {
                     modelContext.delete(todos[index])
                 }
             }
+            .onMove { indices, newOffset in
+                var updated = todos
+                updated.move(fromOffsets: indices, toOffset: newOffset)
+
+                for (index, todo) in updated.enumerated() {
+                    todo.order = index
+                }
+            }
         }
     }
 }

@@ -27,6 +27,19 @@ struct Module5View: View {
                     Text("Notepad")
                         .padding()
                 }
+                NavigationLink(destination: PickerContentView()) {
+                    Text("Quiz")
+                        .padding()
+                }
+            }
+            
+            TabView {
+                Tab("Address Book", systemImage: "book.fill") {
+                    AddressContentView()
+                }
+                Tab("Journal Book", systemImage: "book.fill") {
+                    JournalContentView()
+                }
             }
         }
     }

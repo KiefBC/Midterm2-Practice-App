@@ -13,6 +13,7 @@ class Todo: Identifiable {
     var id: UUID
     var name: String
     var isFinished: Bool
+    var order: Int = 0
     
     init(id: UUID = UUID(), name: String, isFinished: Bool = false) {
         self.id = id

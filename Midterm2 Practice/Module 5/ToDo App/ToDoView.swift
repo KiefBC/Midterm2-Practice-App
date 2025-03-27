@@ -10,7 +10,7 @@ import SwiftData
 
 struct ToDoView: View {
     @Environment(\.modelContext) var modelContext
-    @Query var todos: [Todo]
+    @Query(sort: \Todo.order) var todos: [Todo]
     
     var body: some View {
         NavigationStack {

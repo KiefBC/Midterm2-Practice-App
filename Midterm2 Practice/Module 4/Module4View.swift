@@ -31,10 +31,10 @@ struct Module4View: View {
             Spacer()
             Text("The Methodology is:")
             Text("1) Create Class")
-            Text("2) Create Main View")
-            Text("3) Create Row View")
-            Text("4) Create Item Row View")
-            Text("5) Create Detail (Info) View")
+            Text("2) Create Main View ((Renders the List))")
+            Text("3) Create Row View ((ForEach loop to render each item in the List))")
+            Text("4) Create Item Row View ((Each item in the List))")
+            Text("5) Create Detail (Info) View ((Detail view for each item in the List))")
             Spacer()
         }
     }
