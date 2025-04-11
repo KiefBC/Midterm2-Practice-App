@@ -7,18 +7,15 @@
 
 import SwiftUI
 
-import SwiftUI
-
-
 struct PickerContentView: View {
-    let provinces = [""
-                      , "BC", "AB", "SK", "MB"]
+    let provinces = ["", "BC", "AB", "SK", "MB"]
     let capitals = ["", "Victoria", "Edmonton", "Regina", "Winnipeg"]
     @State var selectedProvince = ""
     @State var selectedCapital = ""
+    
     var body: some View {
         TabView(selection: $selectedProvince) {
-            ForEach(1..<capitals.count) { index in
+            ForEach(1..<provinces.count, id: \.self) { index in
                 PickerView(capitals: capitals, selectedProvince:
                             provinces[index], correctAnswer: capitals[index])
                 .tabItem {
