@@ -12,7 +12,7 @@ import SwiftUI
 
 struct PickerContentView: View {
     let provinces = [""
-                     , "BC", "AB", "SK", "MB"]
+                      , "BC", "AB", "SK", "MB"]
     let capitals = ["", "Victoria", "Edmonton", "Regina", "Winnipeg"]
     @State var selectedProvince = ""
     @State var selectedCapital = ""

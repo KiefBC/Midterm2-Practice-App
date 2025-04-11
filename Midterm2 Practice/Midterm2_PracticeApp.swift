@@ -14,6 +14,6 @@ struct Midterm2_PracticeApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: [Addressbook.self, Journal.self, Todo.self, Notepad.self])
+        .modelContainer(for: [Addressbook.self, Journal.self, Todo.self, Notepad.self, Temperature.self])
     }
 }

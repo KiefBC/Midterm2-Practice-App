@@ -82,25 +82,23 @@ struct ContentView: View {
             HStack {
                 NavigationLink(destination: BooleanView()) {
                     Text("Booleans")
-                        .padding()
                 }
                 NavigationLink(destination: Module1View()) {
                     Text("Module 1")
-                        .padding()
                 }
                 NavigationLink(destination: Module2View()) {
                     Text("Module 2")
-                        .padding()
                 }
                 NavigationLink(destination: Module4View()) {
                     Text("Module 4")
-                        .padding()
                 }
             }
             HStack {
                 NavigationLink(destination: Module5View()) {
                     Text("Module 5")
-                        .padding()
+                }
+                NavigationLink(destination: FinalStuff()) {
+                    Text("Final Stuff")
                 }
             }
 
@@ -121,7 +119,7 @@ struct ContentView: View {
                     }
                 }
         }
-//        .preferredColorScheme(.dark)
+        .preferredColorScheme(.dark)
     }
 
 
