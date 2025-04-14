@@ -30,6 +30,12 @@ struct FinalStuff: View {
                     Text("Exercise 6")
                 }
             }
+            
+            HStack {
+                NavigationLink(destination: ExerciseSeven()) {
+                    Text("Exercise 7")
+                }
+            }
             .navigationTitle("OI OI OI OI")
             .padding(.top)
             Spacer()

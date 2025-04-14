@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		FBB1DFF42DACBBC000987B56 /* All features.swift in Resources */ = {isa = PBXBuildFile; fileRef = FBB1DFF32DACBBC000987B56 /* All features.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		FB21707E2D8F8628002452CB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		FB21706D2D8F8627002452CB /* Midterm2 Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Midterm2 Practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB21707D2D8F8628002452CB /* Midterm2 PracticeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Midterm2 PracticeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB2170872D8F8628002452CB /* Midterm2 PracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Midterm2 PracticeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBB1DFF32DACBBC000987B56 /* All features.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "All features.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +80,7 @@
 		FB2170642D8F8627002452CB = {
 			isa = PBXGroup;
 			children = (
+				FBB1DFF32DACBBC000987B56 /* All features.swift */,
 				FB21706F2D8F8627002452CB /* Midterm2 Practice */,
 				FB2170802D8F8628002452CB /* Midterm2 PracticeTests */,
 				FB21708A2D8F8628002452CB /* Midterm2 PracticeUITests */,
@@ -212,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBB1DFF42DACBBC000987B56 /* All features.swift in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
